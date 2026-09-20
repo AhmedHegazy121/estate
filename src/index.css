@@ -1,0 +1,133 @@
+/* ==========================================================================
+   1. GOOGLE FONT & TAILWIND CONFIGURATION (Tailwind v4)
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", sans-serif;
+}
+
+/* ==========================================================================
+   2. REUSABLE DESIGN SYSTEM & UTILITY CLASSES
+   ========================================================================== */
+@layer components {
+  /* --------------------------------------------------------------------------
+     A. BUTTONS
+     -------------------------------------------------------------------------- */
+
+  /* Primary Action Button (Blue glow with micro-hover bounce) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 
+           bg-blue-600 hover:bg-blue-500 text-white font-medium 
+           rounded-xl shadow-lg shadow-blue-600/30 
+           transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] 
+           cursor-pointer select-none text-center;
+  }
+
+  /* Frosted Glass Button (Translucent dark button with light border) */
+  .btn-glass {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 
+           bg-white/10 hover:bg-white/20 text-white font-medium 
+           rounded-xl backdrop-blur-md border border-white/30 
+           transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] 
+           cursor-pointer select-none text-center;
+  }
+
+  /* Solid White Button (High-contrast button for desktop navbar) */
+  .btn-white {
+    @apply inline-flex items-center justify-center px-6 py-2.5 
+           bg-white hover:bg-neutral-100 text-neutral-900 font-semibold text-sm 
+           rounded-full shadow-md transition-all duration-200 
+           hover:scale-105 active:scale-95 cursor-pointer select-none;
+  }
+
+  /* Square Icon Button (Used for hamburger, close X buttons) */
+  .btn-icon {
+    @apply p-2.5 rounded-xl bg-white/10 hover:bg-white/20 
+           backdrop-blur-md border border-white/20 text-white 
+           transition-all active:scale-95 cursor-pointer;
+  }
+
+  /* --------------------------------------------------------------------------
+     B. GLASSMORPHISM SURFACES & CONTAINERS
+     -------------------------------------------------------------------------- */
+
+  /* Dark Smoked Glass Card (For forms, testimonial cards, project cards) */
+  .glass-card {
+    @apply bg-neutral-950/60 backdrop-blur-xl border border-white/15 
+           rounded-2xl p-6 md:p-8 shadow-2xl shadow-black/50 text-white;
+  }
+
+  /* Fixed Navigation Glass Bar (Applied when user scrolls) */
+  .glass-navbar {
+    @apply bg-black/60 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20;
+  }
+
+  /* Mobile Slide-Out Drawer (Dark smoked frosted glass) */
+  .glass-drawer {
+    @apply bg-neutral-950/75 backdrop-blur-2xl border-l border-white/20 
+           shadow-2xl shadow-black text-white;
+  }
+
+  /* Dark Backdrop Dimmer (Clicks close the mobile menu or modal) */
+  .glass-backdrop {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-[98];
+  }
+
+  /* Frosted Pill Tag/Badge (Used above section headers) */
+  .glass-pill {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 
+           rounded-full bg-white/10 backdrop-blur-md border border-white/20 
+           text-xs sm:text-sm font-medium tracking-wide uppercase text-blue-200;
+  }
+
+  /* --------------------------------------------------------------------------
+     C. TYPOGRAPHY & GRADIENTS
+     -------------------------------------------------------------------------- */
+
+  /* Metallic / Glowing Gradient Text */
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-blue-400;
+  }
+
+  /* Hero Display Heading */
+  .hero-title {
+    @apply text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold 
+           tracking-tight leading-[1.1] text-white;
+  }
+
+  /* Hero Sub-paragraph */
+  .hero-subtitle {
+    @apply text-base sm:text-lg md:text-xl text-neutral-300 font-light max-w-2xl leading-relaxed;
+  }
+
+  /* --------------------------------------------------------------------------
+     D. NAVIGATION LINKS & FORM INPUTS
+     -------------------------------------------------------------------------- */
+
+  /* Desktop Nav Link */
+  .nav-link {
+    @apply px-4 py-2 rounded-full text-neutral-300 text-sm lg:text-base font-medium 
+           transition-all duration-200 hover:text-white hover:bg-white/10;
+  }
+
+  /* Mobile Nav Link Pill */
+  .nav-link-mobile {
+    @apply block px-4 py-3 text-base font-medium text-neutral-200 
+           rounded-xl bg-white/5 border border-white/5 hover:bg-white/15 
+           hover:text-white transition-all;
+  }
+
+  /* Form Inputs (Dark transparent inputs for contact forms) */
+  .form-label {
+    @apply block text-xs font-semibold uppercase tracking-wider text-neutral-300 mb-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 
+           text-white placeholder-neutral-400 text-sm backdrop-blur-md 
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent 
+           transition-all duration-200;
+  }
+}
